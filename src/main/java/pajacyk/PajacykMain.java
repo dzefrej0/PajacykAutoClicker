@@ -4,6 +4,10 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
+import java.sql.Time;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+
 public class PajacykMain {
 
     WebDriver driver = new ChromeDriver();
@@ -26,15 +30,27 @@ public class PajacykMain {
         String a = driver.findElement(By.xpath("//html/body/div[2]/section/div[6]/div[1]")).getText();
         System.out.println(a);
     }
-    
+
+    public LocalDateTime getTimeDateNow (){
+        LocalDateTime localDateTime = LocalDateTime.now();
+
+        return localDateTime;
+    }
+
     public static void main(String[] args) throws InterruptedException {
+        System.setProperty("webdriver.chrome.driver", "chromedriver.exe");
 
         PajacykMain pajacykMain = new PajacykMain();
+        for (int i = 0; i < 10000; i++) {
 
-        pajacykMain.makeAClickOnPajacyk();
-        Thread.sleep(3000);
-        pajacykMain.getCountOfClicks();
-        Thread.sleep(3000);
+            System.out.println("ilość naszych kliknięć:     "+ i );
+            System.out.println("czas kliknięcia  : " + pajacykMain.getTimeDateNow());
+            pajacykMain.makeAClickOnPajacyk();
+            Thread.sleep(1000);
+            pajacykMain.getCountOfClicks();
+            Thread.sleep(10000);
+        }
+
         pajacykMain.closeConnection();
     }
 }
