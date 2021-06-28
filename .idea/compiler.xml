@@ -7,6 +7,7 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="PajacykAutoClicker" />
+        <module name="pajacyk" />
       </profile>
     </annotationProcessing>
   </component>
