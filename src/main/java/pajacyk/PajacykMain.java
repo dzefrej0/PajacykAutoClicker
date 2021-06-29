@@ -11,6 +11,8 @@ public class PajacykMain {
 
 
 
+
+
     WebDriver driver = new ChromeDriver();
     private File fileToSaveData;
 
