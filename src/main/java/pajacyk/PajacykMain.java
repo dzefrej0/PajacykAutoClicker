@@ -3,14 +3,13 @@ package pajacyk;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-
 import java.io.*;
-import java.sql.Time;
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.Scanner;
 
 public class PajacykMain {
+
+
 
     WebDriver driver = new ChromeDriver();
     private File fileToSaveData;
@@ -87,7 +86,7 @@ public class PajacykMain {
             System.out.println("ilość naszych kliknięć:     "+ i );
             System.out.println("czas kliknięcia  : " + pajacykMain.getTimeDateNow());
             pajacykMain.makeAClickOnPajacyk();
-            Thread.sleep(1000);
+            Thread.sleep(2000);
             pajacykMain.getCountOfClicks();
             Thread.sleep(10000);
         }
